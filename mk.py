@@ -1271,9 +1271,10 @@ def bot(op):
                         elif cmd == "me" or text.lower() == 'aim':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               sendMention(msg.to, sender, "「 ผู้สร้าง 」\n", "")
+                               #kifli.generateReplyMessage(msg.id)
+                               sendMention(msg.to, sender, "「 User Self 」\n", "")
                                msg.contentType = 13
-                               msg.contentMetadata = {'mid': mid}
+                               msg.sendReplyMessage(msg.id,to, "MAX",contentMetadata={'vCard': 'BEGIN:VCARD\n\nVERSION:3.0\r\nPRODID:ANDROID 8.13.3 Android OS 4.4.4\r\nFN:\\SELFBOT-BY:MAX'+'\nTEL;TYPE=mobile:'+chino.getContact(sender).statusMessage+'\r\nN:?;\\,\r\nEND:VCARD\r\n', 'displayName': chino.getContact(sender).displayName},contentType=13)                                
                                kifli.sendMessage1(msg)
 
                         elif text.lower() == "mid":
